@@ -3,5 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Matt Mast <mastm17@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "21.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "yargs": "^10.0.3"
+  }
 }
