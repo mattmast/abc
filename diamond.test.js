@@ -27,6 +27,11 @@ describe('test various diamonds', () => {
     expect(diamond.buildDiamond('a').length).toBe(65);
   });
 
+  test('test boundary of diamond', () => {
+    expect(diamond.buildDiamond('z').length).toBe(115);
+    expect(diamond.buildDiamond('{').length).toBe(0);
+  });
+
   test('test multi-letter string takes first', () => {
     expect(diamond.buildDiamond('CBA').length).toBe(5);
   });
