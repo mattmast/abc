@@ -31,7 +31,7 @@ const lineForDiamond = curry((diamondChar, lineChar) => {
   const largestPoint = charCode(diamondChar) - CHAR_CODE_A;
   const pointFromZero = charCode(lineChar) - CHAR_CODE_A;
 
-  const leftSide = ' '.repeat(largetPoint - pointFromZero).concat(lineChar);
+  const leftSide = ' '.repeat(largestPoint - pointFromZero).concat(lineChar);
   if (pointFromZero === 0) {
     return leftSide;
   }
