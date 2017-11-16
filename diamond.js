@@ -1,11 +1,14 @@
 const curry = require('lodash/curry');
 
 const charCode = c => c.charCodeAt(0);
-
 const CHAR_CODE_A = charCode('A');
-
 const CHAR_CODE_LIMIT = charCode('z');
 
+/**
+ * A generator that yields characters from [A, 'char'] then ('char', A].
+ *
+ * @param char - The ending character for range.
+ */
 function* charRangeForDiamond(char) {
   for (let idx = CHAR_CODE_A, end = charCode(char); idx <= end; ++idx) {
     yield String.fromCharCode(idx);
@@ -16,19 +19,33 @@ function* charRangeForDiamond(char) {
   }
 }
 
+/**
+ * Build a particular line for a diamond given by 'diamondChar'.  The function
+ * splits the problem into finding the first number of spaces *before* the first character
+ * output. Then it computes the spaces *after* the first character output.
+ *
+ * @param diamondChar - The type of diamond that the line is being constructed for.
+ * @param lineChar - The character for line to be computed.
+ */
 const lineForDiamond = curry((diamondChar, lineChar) => {
-  const origin = CHAR_CODE_A;
-  const center = charCode(diamondChar) - origin;
-  const distFromOrigin = charCode(lineChar) - origin;
+  const largestPoint = charCode(diamondChar) - CHAR_CODE_A;
+  const pointFromZero = charCode(lineChar) - CHAR_CODE_A;
 
-  const leftSide = ' '.repeat(center - distFromOrigin).concat(lineChar);
-  if (distFromOrigin === 0) {
+  const leftSide = ' '.repeat(largetPoint - pointFromZero).concat(lineChar);
+  if (pointFromZero === 0) {
     return leftSide;
   }
-  const rightSide = ' '.repeat(2 * distFromOrigin - 1).concat(lineChar);
+  const rightSide = ' '.repeat(2 * pointFromZero - 1).concat(lineChar);
   return leftSide.concat(rightSide);
 });
 
+/**
+ * Build a diamond out of characters starting with 'A" and ending with
+ * the provider character.
+ *
+ * @param diamondChar - The character that the diamond will be built for.
+ * @returns {*} - A list of strings for each line of the diamond.
+ */
 const buildDiamond = (diamondChar) => {
   if (typeof diamondChar !== 'string') {
     return [];
