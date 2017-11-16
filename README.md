@@ -27,31 +27,32 @@ Options:
 ```
 $> npm test -- --coverage
 
-> abc@1.0.0 test
+> abc@1.0.0 test C:\Users\matt1mast\src\abc
 > jest "--coverage"
 
  PASS  .\diamond.test.js
   test "C" diamond
-    √ line for A (3ms)
-    √ line for B
+    √ line for A (2ms)
+    √ line for B (1ms)
     √ line for C
-    √ diamond height is 5 (1ms)
+    √ diamond height is 5
   test various diamonds
-    √ test "a" diamond
+    √ test "a" diamond (1ms)
+    √ test boundary of diamond (1ms)
     √ test multi-letter string takes first
     √ test integer diamond returns empty
     √ test unicode character diamond returns empty
     √ test special character returns empty
-    √ test number as string returns empty
+    √ test number as string returns empty (1ms)
     √ test empty string returns empty
-    √ test whitespace string returns empty (1ms)
+    √ test whitespace string returns empty
     √ test object returns empty
     √ test list returns empty
 
 Test Suites: 1 passed, 1 total
-Tests:       14 passed, 14 total
+Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        0.759s, estimated 1s
+Time:        1.116s
 Ran all test suites.
 ------------|----------|----------|----------|----------|----------------|
 File        |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
