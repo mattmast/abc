@@ -18,9 +18,9 @@ Options:
 
 ==== Setup ====
 
-* clone 
-* cd abc
-* npm install
+* ```git clone https://github.com/mattmast/abc```
+* ```cd abc```
+* ```npm install```
 
 === Tests ===
 
