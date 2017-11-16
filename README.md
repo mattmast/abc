@@ -16,13 +16,13 @@ Options:
   -c, --character  Character for diamond                          [default: "C"]
 ```
 
-==== Setup ====
+### Setup
 
-* ```git clone https://github.com/mattmast/abc```
-* ```cd abc```
-* ```npm install```
+1. ```git clone https://github.com/mattmast/abc```
+2. ```cd abc```
+3. ```npm install```
 
-=== Tests ===
+### Tests
 
 ```
 $> npm test -- --coverage
