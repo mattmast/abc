@@ -17,10 +17,10 @@ Options:
 ```
 
 ### Setup
-
-1. ```git clone https://github.com/mattmast/abc```
-2. ```cd abc```
-3. ```npm install```
+1. Install and setup NodeJS ```v8.9.1``` or newer
+2. ```git clone https://github.com/mattmast/abc```
+3. ```cd abc```
+4. ```npm install```
 
 ### Tests
 
